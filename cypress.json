@@ -1,0 +1,10 @@
+{
+  "baseUrl": "https://www.shopltk.com/",
+  "video": false,
+  "defaultCommandTimeout": 7000,
+  "retries": {
+    "runMode": 1,
+    "openMode": 1
+  }
+}
+

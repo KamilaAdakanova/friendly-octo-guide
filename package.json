@@ -1,0 +1,23 @@
+{
+  "name": "friendly-octo-guide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alinaangelsky/friendly-octo-guide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alinaangelsky/friendly-octo-guide/issues"
+  },
+  "homepage": "https://github.com/alinaangelsky/friendly-octo-guide#readme",
+  "dependencies": {
+    "cypress": "^9.6.0"
+  }
+}
