@@ -1,7 +1,7 @@
 import mainPage from "../../support/pageObjects/mainPage";
 describe('SIGN UP', ()=>{
     before(()=>{
-        cy.visit('')
+        cy.visit('/')
     })
     it('sign up is visible', ()=>{
         mainPage.signUpBtn().should('be.visible')
@@ -17,7 +17,7 @@ describe('SIGN UP', ()=>{
 
 describe('LOGIN', ()=>{
     before(()=>{
-        cy.visit('')
+        cy.visit('/')
     })
     it('login is visible', ()=>{
         mainPage.loginBtn().should('be.visible')

@@ -1,22 +1,10 @@
-import signUpPage from "../../support/pageObjects/signUpPage";
+import signUpPage from "../../../support/pageObjects/signUpPage";
 const email = signUpPage.generateEmail()
-// describe('Main elements', ()=>{
-//         before('Precondition',()=>{
-//         cy.visit('signup')
-//     })
-//     it('should can type email', ()=>{
-//
-//         signUpPage.emailField().type(email).should('have.value', email)
-//     })
-//     // it('should can enter password', ()=>{
-//     //     signUpPage.passField().type(email).should('have.value', email)
-//     // })
-//
-// })
+
 
 describe('SIGN UP functionality', ()=>{
     before(()=>{
-        cy.visit('signup')
+        cy.visit('/signup')
     })
     it('Sign up successfully', ()=>{
     signUpPage.headerSignUp().should("be.visible").should("have.text", "Sign Up");

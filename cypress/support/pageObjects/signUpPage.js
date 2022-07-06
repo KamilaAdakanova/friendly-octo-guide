@@ -2,7 +2,9 @@ export default new class SignUpPage{
     signUpBtnHM = () => cy.get('[href="/signup"]');
     headerSignUp = () => cy.get('[data-msgid="Sign Up"]');
     emailField = () => cy.get('input#input-14');
+    emailLabel = () => cy.get('[for="input-14"]>span');
     passField = () => cy.get('input#input-20');
+    passLabel = () => cy.get('[for="input-20"]>span');
     signUpBtn = () => cy.get('button[type="submit"]');
     headerAfterSignUp = () => cy.get("h2");
     profileMenu =() => cy.get('button[aria-label="menu"]');
