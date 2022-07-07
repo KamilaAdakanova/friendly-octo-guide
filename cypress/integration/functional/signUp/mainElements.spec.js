@@ -21,8 +21,8 @@ describe('PAGE ELEMENTS AND THEIR BASE FUNCTIONALITY', ()=>{
         signUpPage.emailField().type(email).should('have.value', email)
         })
         it('Can not sign up with invalid email', ()=>{
-            signUpPage.emailField().type(password);
-            signUpPage.passField().type(password);
+            signUpPage.emailField().type(password, { delay: 15 });
+            signUpPage.passField().type(password, { delay: 15 });
             signUpPage.signUpBtn().click();
             cy.url().should('include', 'login');
         })
@@ -39,7 +39,7 @@ describe('PAGE ELEMENTS AND THEIR BASE FUNCTIONALITY', ()=>{
             signUpPage.passErrorMsg().should('have.text', 'Minimum of 8 characters')
         })
         it('Should can type password', ()=>{
-            signUpPage.passField().type(password).should('have.value', password)
+            signUpPage.passField().type(password, { delay: 15 }).should('have.value', password)
         })
         it('Can not sign up with invalid password', ()=>{
             const invalidPass = signUpPage.generatePass(4)

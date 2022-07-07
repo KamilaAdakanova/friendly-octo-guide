@@ -37,4 +37,13 @@ export default new class SignUpPage{
         }
         return pass;
     }
+    // checkInputField = (fieldId, fieldType)=>{
+    //
+    // }
+
+    // it("accept", () => {
+    // cy.get('button[id*="ember"][aria-label*="Accept"]').each((el) => cy.wrap(el).click({ force: true }));
+    // });
+    //cy.scrollTo('bottom')
+
 }
