@@ -22,8 +22,24 @@ export default new class MainPage{
         this.shopLink().should('be.visible').should('have.text', mainPageTestData.default.shopLink);
         this.favoritesLink().should('be.visible').should('have.text', mainPageTestData.default.favoritesLink);
         this.dealsLink().should('be.visible').should('have.text', mainPageTestData.default.deals);
-
-
+    }
+    redirect = () => {
+        cy.visit('/').location('pathname').should('eq', '/');
+        this.discoverLink().click();
+        cy.url().should('include', mainPageTestData.discover.pathname);
+        cy.get(mainPageTestData.discover.selector).should('have.text', mainPageTestData.discover.text);
+        cy.visit('/').location('pathname').should('eq', '/');
+        this.shopLink().click();
+        cy.location('pathname').should('eq', mainPageTestData.shop.pathname);
+        cy.get(mainPageTestData.shop.selector).should('have.text', mainPageTestData.shop.text);
+        cy.visit('/').location('pathname').should('eq', '/');
+        this.signUpBtn().click();
+        cy.url().should('include', mainPageTestData.signIn.pathname);
+        cy.get(mainPageTestData.signIn.selector).should('have.text', mainPageTestData.signIn.text);
+        cy.visit('/').location('pathname').should('eq', '/');
+        this.loginBtn().click();
+        cy.url().should('include', mainPageTestData.logIn.pathname);
+        cy.get(mainPageTestData.logIn.selector).should('have.text', mainPageTestData.logIn.text);
     }
 
 

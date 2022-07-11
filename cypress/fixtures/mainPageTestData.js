@@ -8,7 +8,28 @@ const mainPageTestData = {
       "shopLink": "Shop",
       "favoritesLink": "Favorites",
       "deals": '\n          Deals\n        '
-    }
+    },
+    discover: {
+            pathname: 'login',
+            selector: '[data-msgid="Log In"]',
+            text: 'Log In',
+    },
+    shop: {
+        pathname: '/categories',
+        selector: 'div>h2',
+        text: 'LTK Categories',
+    },
+
+    logIn: {
+            pathname: 'login',
+            selector: '[data-msgid="Log In"]',
+            text: 'Log In',
+    },
+    signIn: {
+            pathname: 'login',
+            selector: '[data-msgid="Sign Up"]',
+            text: 'Sign Up',
+    },
 }
 
 module.exports = mainPageTestData;
