@@ -46,7 +46,7 @@ export default new class MainPage{
 
     search = ()=>{
         cy.visit('/').location('pathname').should('eq', '/');
-        this.searchField().type('black dress{enter}', {force: true});
+        this.searchField().type('black dress{enter}', {delay: 200} );
         cy.title().should('eq', 'Shop "black dress" on LTK');
     }
 

@@ -37,6 +37,45 @@ export default new class SignUpPage{
         }
         return pass;
     }
+    generatePassMethod = (numberOfChar = 8)=>{
+        const letters = 'abcdefghijklmnopqrstuvwxyz';
+        const capitalLet = letters.toUpperCase();
+        const characters = '!@#$%^&*';
+        let pass = '';
+        for(let i = 0; i < numberOfChar; i++){
+            let obj = {
+                letters: 0,
+                capitalLet: 0,
+                characters: 0,
+                numbers: 0
+            };
+            let num = +Math.random().toFixed(2);
+            if(num > 0.75 && obj["letters"]=== 0){
+                let index = Math.floor(Math.random()*((letters.length -1) +1));
+                pass += letters[index];
+                obj["letters"]++;
+            }
+            if(num > 0.5 && obj["capitalLet"]=== 0){
+                let index = Math.floor(Math.random()*((letters.length -1) +1));
+                pass += letters[capitalLet];
+                obj["capitalLet"]++;
+            }
+            if(num > 0.25 && obj["characters"]=== 0){
+                let index = Math.floor(Math.random()*((characters.length -1) +1));
+                pass += letters[characters];
+                obj["characters"]++;
+            }
+        }
+        let key
+        while(obj[key] === 0){
+            let num = +Math.random().toFixed(2);
+        }
+
+
+
+
+
+    }
     // checkInputField = (fieldId, fieldType)=>{
     //
     // }

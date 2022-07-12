@@ -12,7 +12,7 @@ describe('Main Page - Main Page Elements and their base functionality Main Test 
     });
 
     describe('PRECONDITIONS: Load Main Page, type search item in search field', () => {
-        it.skip('Visit Main Page and check Search functionality', () => {
+        it('Visit Main Page and check Search functionality', () => {
             mainPage.search();
         });
     });
