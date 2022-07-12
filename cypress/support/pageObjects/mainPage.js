@@ -9,6 +9,7 @@ export default new class MainPage{
     shopLink = ()=> cy.get('a[href="/categories"]>span');
     favoritesLink =()=> cy.get('a[href="/account/favorites/products"]');
     dealsLink =()=> cy.get('button[role="button"]>span');
+    searchField =()=> cy.get('#input-171');
 
     //METHODS
     //Load Home Page (and check that the Home page was loaded: checking Page Title and Page Text)
@@ -22,6 +23,7 @@ export default new class MainPage{
         this.shopLink().should('be.visible').should('have.text', mainPageTestData.default.shopLink);
         this.favoritesLink().should('be.visible').should('have.text', mainPageTestData.default.favoritesLink);
         this.dealsLink().should('be.visible').should('have.text', mainPageTestData.default.deals);
+        this.searchField().should('have.attr', 'placeholder', mainPageTestData.default.searchField);
     }
     redirect = () => {
         cy.visit('/').location('pathname').should('eq', '/');
@@ -40,6 +42,12 @@ export default new class MainPage{
         this.loginBtn().click();
         cy.url().should('include', mainPageTestData.logIn.pathname);
         cy.get(mainPageTestData.logIn.selector).should('have.text', mainPageTestData.logIn.text);
+    }
+
+    search = ()=>{
+        cy.visit('/').location('pathname').should('eq', '/');
+        this.searchField().type('black dress{enter}', {force: true});
+        cy.title().should('eq', 'Shop "black dress" on LTK');
     }
 
 
