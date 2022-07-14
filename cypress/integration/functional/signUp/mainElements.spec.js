@@ -1,7 +1,9 @@
 import signUpPage from "../../../support/pageObjects/signUpPage";
 import loginPage from "../../../support/pageObjects/loginPage";
+import localHelper from "../../../support/localHelper";
 const email = signUpPage.generateEmail();
-const password = signUpPage.generatePass(9);
+const password = localHelper.generateRandomPassword(20)
+
 describe('PAGE ELEMENTS AND THEIR BASE FUNCTIONALITY', ()=>{
 
     beforeEach('Precondition: open SignUp Page', () => {
