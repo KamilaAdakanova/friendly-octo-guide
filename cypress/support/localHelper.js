@@ -13,7 +13,7 @@ export default new class LocalHelper {
             n: 0
         };
         for(let i = 0; i < numberOfChar; i++){
-            let index = Math.floor(Math.random()*((chars.length -1) +1));
+            let index = Math.floor(Math.random()*chars.length);
             let char = chars[index];
             if(letters.includes(char)&& obj.l < Math.trunc(numberOfChar/4)){
                 pass += char
@@ -33,20 +33,20 @@ export default new class LocalHelper {
             }
         }
         if(obj.l === 0){
-            pass += letters[Math.floor(Math.random()*((letters.length -1) +1))]
+            pass += letters[Math.floor(Math.random()*letters.length)]
         }
         if(obj.k === 0){
-            pass += capitalLet[Math.floor(Math.random()*((capitalLet.length -1) +1))]
+            pass += capitalLet[Math.floor(Math.random()*capitalLet.length)]
         }
         if(obj.c === 0){
-            pass += characters[Math.floor(Math.random()*((characters.length -1) +1))]
+            pass += characters[Math.floor(Math.random()*characters.length)]
         }
         if(obj.n === 0){
             pass += Math.floor(Math.random()*10)
         }
         let dif = numberOfChar - pass.length;
         for(let i = 0; i < dif; i++){
-            let indexS = Math.floor(Math.random()*((chars.length -1) +1));
+            let indexS = Math.floor(Math.random()*chars.length);
             pass += chars[indexS]
         }
         return pass;
